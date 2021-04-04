@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배경 스프라이트 애니메이션</title>
+</head>
+<body>
+  <h1>배경 스프라이트 애니메이션</h1>
+  <h2>1. 우주선</h2>
+  <div class="ship"></div>
+  <style>
+    @keyframes ship_ani {
+      0% {
+        background-position: left top;
+      }
+      100% {
+        background-position: right top;
+      }
+    }
+    .ship {
+      width: 200px;
+      height: 200px;
+      background-image: url(./images/sprite_spaceship.png);
+      background-size: 3400px;
+      background-position: 0% top;
+      animation: ship_ani 3s steps(16) infinite;
+    }
+  </style>
+
+  <h2>2. 후기 무한 루프</h2>
+  <div class="review"></div>
+  <style>
+    @keyframes review_ani {
+      0% {
+        background-position: 0 top;
+      }
+      100% {
+        background-position: 151.3% top;
+      }
+    }
+    .review {
+      width: 100%;
+      padding-bottom: 40%;
+      background-image: url(./images/review_list.png);
+      background-size: auto 100%;
+      background-position: 0 top;
+      background-repeat: repeat-x;
+      animation: review_ani 10s linear infinite;
+      
+    }
+  </style>
+</body>
+</html>
