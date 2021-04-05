@@ -27,5 +27,27 @@
       word-break: break-all;
     }
   </style>
+
+
+	<script>
+		function Card(num, color) {
+			this.num = num;
+			this.color = color;
+		}
+		Card.prototype.width = '100px';
+		Card.prototype.height = '150px';
+		Card.prototype.init = function() {
+			const cardElem = document.createElement('div');
+			cardElem.classList.add('card');
+			cardElem.style.width = this.width;
+			cardElem.style.height = this.height;
+			cardElem.style.background = this.color;
+			cardElem.textContent = this.num;
+			document.body.appendChild(cardElem);
+		}
+
+		const blueCard = new Card(10, 'blue');
+		const redCard = new Card(3, 'red');
+	</script>
 </body>
 </html>
