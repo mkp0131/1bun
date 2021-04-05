@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .scroll-info {
+      width: 100vw;
+      height: 60px;
+      background: rgba(255, 255, 255, .8);
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+    .container {
+      width: 100vw;
+      height: 300vh;
+      background: yellowgreen;
+      font-size: 102px;
+      border: 1px solid yellowgreen;
+      box-sizing: border-box;
+    }
+    .container .object {
+      margin-top: 110vh;
+      text-align: center;
+      border-top: 1px solid red;
+      transition: all 0.3s;
+    }
+    .container .object.on {
+      transform: scale(2) translateY(10vh);
+    }
+  </style>
+  <div class="scroll-info js-scroll-info"></div>
+  <div class="container">
+    <div class="object js-target">🥶</div>
+  </div>
+
+  <script>
+    let onFlag = false;
+    const targetElem = document.querySelector('.js-target');
+    const scrollInfoElem = document.querySelector('.js-scroll-info');
+    document.addEventListener('scroll', function() {
+      const targetClientRect = targetElem.getBoundingClientRect();
+      const targetTop = targetClientRect.top;
+      console.log('targetTop', targetTop);
+      // const scroll = document.documentElement.scrollTop;
+      // scrollInfoElem.textContent = scroll;
+      if(!onFlag && targetTop < window.innerHeight * 0.3) {
+        targetElem.classList.add('on');
+        onFlag = true;
+      }
+      else if(onFlag && targetTop > window.innerHeight * 0.3) {
+        targetElem.classList.remove('on');
+        onFlag = false;
+      }
+    });
+    console.log('targetElem.getBoundingClientRect().top', targetElem.getBoundingClientRect().top);
+  </script>
+</body>
+</html>

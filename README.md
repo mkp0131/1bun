@@ -11,6 +11,7 @@
 3. 애니메이션 속도: linear 등속도(일정한 변화)
 4. step(숫자): 몇번의 step으로 100%로 만들지 설정
 5. forwards: 100%의 모양으로 종료(유지)
+6. 숫자를 적어주어 애니메이션을 실행할 횟수도 지정할수있다.
 
 ## 3. perspective: css 3d 효과는 공간을 3d로 만들어야한다.
 
@@ -52,3 +53,5 @@ while (!elem.classList.contains('door')) {
 ```
 transform: translate3d(0, 0, 0);
 ```
+
+## 11. addEventListener 에서는 transition 의 start, end 그리고 animation 의 start, end, repeat에 이벤트를 걸어줄수있다.
