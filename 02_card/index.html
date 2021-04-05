@@ -7,18 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
-    <div class="door-box">
-      <div class="door">
-        <div class="door__inner">
-          <div class="object">😀</div>
-        </div>
-        <div class="door__outer"></div>
-      </div>
-    </div>
-  </div>
 
-  <style>
+	<style>
     body {
       padding: 0;
       margin: 0;
@@ -33,7 +23,7 @@
     }
     .door-box {
       background: #000;
-  
+			padding: 10em;
     }
     .door-box .door {
       width: 150px;
@@ -70,13 +60,54 @@
       transition: transform 0.5s 0.5s;
     }
 
-    /* hover */
-    .door-box .door:hover .door__outer {
+    /* hover || click */
+    .door-box .door.on .door__outer {
       transform: rotateY(-180deg);
     }
-    .door-box .door:hover .door__inner .object {
+    .door-box .door.on .door__inner .object {
       transform: translate3d(0%, 0, 0);
     }
   </style>
+
+
+  <div class="container">
+    <div class="door-box">
+      <div class="door">
+        <div class="door__inner">
+          <div class="object">😀</div>
+        </div>
+        <div class="door__outer"></div>
+      </div>
+      <div class="door">
+        <div class="door__inner">
+          <div class="object">😀</div>
+        </div>
+        <div class="door__outer"></div>
+      </div>
+    </div>
+  </div>
+
+	<script>
+		const door = document.querySelector('.door-box');
+		let openedItem;
+		door.addEventListener('click', (e) => {
+			let elem = e.target;
+		
+			if(openedItem) {
+				openedItem.classList.remove('on');
+			}
+
+			while (!elem.classList.contains('door')) {
+				if(elem.classList.contains('door-box')) return;
+				elem = elem.parentNode;
+			}
+
+			openedItem = elem;
+		
+			elem.classList.add('on');
+		})
+		
+	</script>
+
 </body>
 </html>

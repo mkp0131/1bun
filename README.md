@@ -41,6 +41,12 @@
 ## 8. 이벤트 핸들러로 함수가 사용될때는 첫번째 인자(parameter)로 event 객체를 받은다.
 
 ## 9. 이벤트 위임으로 버튼을 작동시킬때, 버튼안에 요소들이 있을경우, event.target이 안에있는 요소가 될수있다. 그럴땐 for 문을 이용하여 event.target을 잡아준다.
+```
+let elem = e.target;
+while (!elem.classList.contains('door')) {
+	elem = elem.parentNode;
+}
+```
 
 ## 10. css 속성에서 3d가 붙은 속성들은 하드웨어 가속을 사용한다.
 ```
