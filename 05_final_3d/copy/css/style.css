@@ -1,0 +1,42 @@
+body {
+	background: #008cff;
+}
+
+.word {
+	perspective: 100px;
+}
+
+.house {
+	/* display: flex; */
+	position: relative;
+}
+
+/* .house .house__wall {
+	background: #fff;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: rotateY(0);
+} */
+
+/* .house .house__left {
+	transform: rotateY(45deg);
+}
+.house .house__right {
+	transform: rotateY(-45deg);
+	display: none;
+} */
+
+.house .font {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(255, 255, 255, 0.4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 8rem;
+	font-weight: 900;
+	transform: translateZ(-14vw) rotateY(91deg);
+}

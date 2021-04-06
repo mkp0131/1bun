@@ -28,7 +28,7 @@
     }
   </style>
 
-
+	<button onclick="stopSample();">애니메이션 취소</button>
 	<script>
 		function Card(num, color) {
 			this.num = num;
@@ -48,6 +48,16 @@
 
 		const blueCard = new Card(10, 'blue');
 		const redCard = new Card(3, 'red');
+
+		let timeOut;
+		function sample() {
+			console.log('#ani');
+			timeOut = requestAnimationFrame(sample);
+		}
+		sample();
+		function stopSample() {
+			cancelAnimationFrame(timeOut)
+		}
 	</script>
 </body>
 </html>

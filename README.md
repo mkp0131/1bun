@@ -55,3 +55,15 @@ transform: translate3d(0, 0, 0);
 ```
 
 ## 11. addEventListener 에서는 transition 의 start, end 그리고 animation 의 start, end, repeat에 이벤트를 걸어줄수있다.
+
+
+## 12. requestAnimationFrame
+1. setInterval 을 대신해서 사용한다.
+2. 1초에 60프레임 목표
+3. 재귀함수처럼 사용한다.
+```
+	function sample() {
+			console.log('#ani');
+			timeOut = requestAnimationFrame(sample);
+		}
+```
