@@ -28,6 +28,7 @@ img {
 	top: 0;
 	width: 100vw;
 	height: 100vh;
+	overflow-x: hidden;
 }
 .scroll-graphic .graphic-item {
 	position: absolute;
@@ -65,5 +66,21 @@ img {
 	width: 100px;
 	position: absolute;
 	left: 0;
-	top: 10%;
+	bottom: 80%;
+	transition: all 1s 0.5s;
+}
+
+[data-action="birdFlies2"] .bird {
+	left: 0;
+	bottom: 10%;
+}
+
+
+/* 푸터 */
+.global-footer {
+	background: #000;
+	color: #fff;
+	text-align: center;
+	padding: 3em 1em;
+	margin-top: 5em;
 }
